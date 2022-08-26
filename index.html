@@ -20,7 +20,8 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/modern-normalize@1.1.0/modern-normalize.css"
     />
-
+    <!-- SCSS -->
+    <link rel="stylesheet" href="./css/main.min.css" />
     <!-- ОСНОВНОЙ ФАЙЛ CSS -->
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
@@ -55,7 +56,10 @@
         <!-- КОНТАКТНАЯ ИНФОРМАЦИЯ -->
         <ul class="contacts-list list">
           <li class="contacts-item">
-            <a class="contacts-link decoration" href="mailto:info@devstudio.com">
+            <a
+              class="contacts-link decoration"
+              href="mailto:info@devstudio.com"
+            >
               <svg class="contacts-icon-item-mail">
                 <use href="./images/sprite.svg#icon-email"></use>
               </svg>
@@ -156,15 +160,13 @@
             <li class="picture-block-item">
               <div class="picture-block-wrap">
                 <img
-                class="picture-block-img"
-                src="./images/planning.jpg"
-                alt="планирование проекта"
-                width="370"
-                height="294"
+                  class="picture-block-img"
+                  src="./images/planning.jpg"
+                  alt="планирование проекта"
+                  width="370"
+                  height="294"
                 />
-                <p class="picture-block-text">
-                  Десктопні додатки
-                </p>
+                <p class="picture-block-text">Десктопні додатки</p>
               </div>
             </li>
             <li class="picture-block-item">
@@ -176,9 +178,7 @@
                   width="370"
                   height="294"
                 />
-                <p class="picture-block-text">
-                  Мобільні додатки
-                </p>
+                <p class="picture-block-text">Мобільні додатки</p>
               </div>
             </li>
             <li class="picture-block-item">
@@ -190,9 +190,7 @@
                   width="370"
                   height="294"
                 />
-                <p class="picture-block-text">
-                  Дизайнерські рішення
-                </p>
+                <p class="picture-block-text">Дизайнерські рішення</p>
               </div>
             </li>
           </ul>
@@ -495,6 +493,7 @@
             </ul>
           </address>
         </div>
+        <!-- Второй блок футера!!!!!!!!!!!!!!!!!!!! -->
         <div class="invite-box">
           <h2 class="invite-title">приєднуйтесь</h2>
 
@@ -532,8 +531,34 @@
             </li>
           </ul>
         </div>
+        <!-- третий блок с формой!!!!!!!!!!!!!!!!!!!! -->
+        <div class="field-footer">
+          <h2 class="field-title">Підпишіться на розсилку</h2>
+          <div class="field-footer-wrap">
+            <div class="field-footer-input-wrap">
+              <input
+                class="field-footer-input"
+                type="email"
+                name="user-email"
+                id="user-email"
+                placeholder="E-mail"
+                maxlength="30"
+                required
+              /> 
+            </div>
+            <div class="footer-button-wrap">
+              <button class="footer-button-submit" type="submit">
+                Підписатися
+                <svg class="icone-send">
+                  <use href="./images/sprite.svg#icon-send"></use>
+                </svg>
+              </button>
+            </div>
+        </div>
       </div>
     </footer>
+
+    <!-- МОДАЛЬНОЕ ОКНО -->
     <div class="backdrop is-hidden" data-modal>
       <div class="modal">
         <button type="button" class="modal-close" data-modal-close>
@@ -541,6 +566,92 @@
             <use href="./images/sprite.svg#modal-close"></use>
           </svg>
         </button>
+        <p class="modal-title">Залиште свої дані, ми вам передзвонимо</p>
+        <form class="modal-form">
+          <div class="modal-field">
+            <label for="user-name" class="modal-lable">ім'я</label>
+            <div class="input-wrap">
+              <input
+                class="modal-input"
+                type="text"
+                name="user-name"
+                id="user-name"
+                placeholder=""
+                maxlength="25"
+                required
+              />
+              <svg class="input-icon">
+                <use href="./images/sprite.svg#icon-person-black"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="modal-field">
+            <label for="user-tel" class="modal-lable">Телефон</label>
+            <div class="input-wrap">
+              <input
+                class="modal-input"
+                type="tel"
+                name="user-tel"
+                id="user-tel"
+                placeholder=""
+                maxlength="13"
+                required
+              />
+              <svg class="input-icon">
+                <use href="./images/sprite.svg#icon-phone-black"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="modal-field">
+            <label for="user-email" class="modal-lable">Пошта</label>
+            <div class="input-wrap">
+              <input
+                class="modal-input"
+                type="email"
+                name="user-email"
+                id="user-email"
+                placeholder=""
+                maxlength="30"
+                required
+              />
+              <svg class="input-icon">
+                <use href="./images/sprite.svg#icon-email-black"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="modal-field">
+            <label for="user-text" class="modal-lable">Коментар</label>
+            <textarea
+              class="online-comment"
+              type="text"
+              name="user-text"
+              id="user-text"
+              placeholder="Введіть текст"
+              
+            ></textarea>
+          </div>
+          <div class="modal-field modal-field-check-box">
+            <input
+              type="checkbox"
+              class="modal-check visually-hidden"
+              name="privacy"
+              id="privacy"
+            />
+            <label for="privacy" class="check-text">
+              <span class="icon-border">
+                <svg class="check-icon" width="16" height="15">
+                  <use href="./images/sprite.svg#icon-check"></use>
+                </svg>
+              </span>
+              Погоджуюся з розсилкою та приймаю<a class="decoration privacy" href="#"> Умови договору</a>
+            </label>
+
+            <!-- <label for="privacy" class="check-text">Погоджуюся з розсилкою та приймаю <a class="privacy-link" href="#"> Умови договору</a></label> -->
+          </div>
+          <div class="button-box">
+            <button class="submit-button" type="submit">Відправити</button>
+          </div>
+        </form>
       </div>
     </div>
     <script src="./js/modal.js"></script>
